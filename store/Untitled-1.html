@@ -1,0 +1,76 @@
+Store-Framework
+como agregar el frontend en frame work
+paquete de componentes llamados bloques para ir montando el bloque mayor. (ejemplos: bloque-imagen, bloque-precio)
+-------------------------------
+amplia personalizacion: todos los bloques se modifican, los componentes react estan encapsulados.
+-------------------------------
+"store.home": {                   ///home hereda componentes de store como subtemplates(header, scripts, footer)
+    "blocks":[                    ///
+        "carousel",
+        "shelf#identificador"
+    ]
+}
+-------------------------------
+server side rendering
+single page aplication.   ///la web dividira estos dos archivos y con ia seleccionara que tomar
+code splitting: ve que pagina viene y ver si estan algunos componentes, si si ahi deja si no carga.
+cdn? hay dos por si falla una carga rapidamente a la otra.
+-------------------------------
+Documentacion vtex io(vtexio/doc)
+Recepts(howtouse)
+vtexapps en git hub para ver como estan los bloques.
+vtexiorelease: 
+store-discussion
+--------------------------------
+Desarrollaremos con componentes nativos de vtexio:
+cosas que necesitamos para desarrollar en el store framework:
+node.js
+--------------------------------
+vtex link: solo para linkear del workspace a tu pagina editable.
+
+
+
+
+---------------------------------------------------------------------------------------------------------------------
+Store-Block
+trabajar en react: virtual dom. entiende todo lo que muda el html. en vez de cargar toda la pagina, carga los componentesque faltan
+TSX: trabajar con una tecnologia tapscript, al mismo tiempo que se define el html tambien el script.
+components: se comunican entre ellos, solo se encapsulas. si tenemos mil botones con el component se utiliza solo uno.
+Hooks: ?
+Context: compartir informacion entre dos componentes. ejemplo: manda a llamar perfil, pagos, nombre, etc una sola funcion
+Css modules: ?
+builders: como se va a comportar la app. si creo un messages, hacer una carpeta messages
+interfaces.json: todos los componentes que se necesitan en la app de react. hay que mapear este componente. nombrearchivo{component:nombrearchivo}
+Props: sirve para mapear todo lo posible, entre mas funciones mas props
+--------------------------------
+desarrollo con servidores externos:
+policies: sirve para no lanzar las url a otro lugar para que no filtre la informacion. si vtex detecta alomanias revienta todo
+protocolo mas utilizado de comunicacion es tcp, http, rest(json mas nuevo)
+scope: privado o publico ejmplo lista de Desarrollaremos
+graphql: nos ayuda a realizar busquedas mas especificas.
+-----------------------------------------------------------------------------------------------------------------------
+
+Como vender el storework: 
+rapida. 
+la implementacion es low code. 
+es editable. 
+no es estar anclado a una sola version, 
+es contante evolucion
+distintos workspaces
+cms visual y ahi mismo editable
+
+----------------------------------------------------------------------------------------------------------------------- 
+vtex release paso opcional
+vtex publish(cambiar verion(muy diferente/funcuiones agregadas/solucion de errores))
+vtex deploy (estando en la carpeta no hay que escribir, lee el manifest.json)
+vtex install vendedor.nombreapp@path.x (instalar la aplicacion en el workspace actual) (ejemplo(appliancetheme.thememexico@1.x))
+vtex promote (promover como master.)
+
+
+Para crear workspace de production
+vtex use nombredeespacio --production (develoment/production())
+Para crear workspace de develoment
+vtex use nombredeespacio
+
+
+vtex install 
